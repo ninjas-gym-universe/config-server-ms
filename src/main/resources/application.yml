@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: native
+  application:
+    name: @project.name@
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:configs,file:configs
+
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+  level:
+    root: info
